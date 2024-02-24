@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Review</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-image: url('https://c8.alamy.com/comp/2C2X4MG/restaurant-rate-customer-review-isometric-landing-page-food-delivery-service-mobile-app-ramen-noodles-pizza-lying-near-smartphone-with-star-on-sc-2C2X4MG.jpg'); /* Replace with your background image URL */
+            background-size: cover;
+            background-position: cover;
+            backdrop-filter: blur(6px);
+        } 
+        .review-container {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .stars-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .star {
+            cursor: pointer;
+            font-size: 30px;
+            color: gray;
+            margin: 0 5px;
+        }
+        .star:hover,
+        .star.active {
+            color: gold;
+        }
+        #experience {
+            width: 100%;
+            height: 100px;
+            resize: none;
+            margin-bottom: 20px;
+        }
+        #submitBtn {
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="review-container">
+        <h2>Food Review</h2>
+        
+        <div class="stars-container" id="stars-container">
+            <span class="star" data-rating="1">&#9733;</span>
+            <span class="star" data-rating="2">&#9733;</span>
+            <span class="star" data-rating="3">&#9733;</span>
+            <span class="star" data-rating="4">&#9733;</span>
+            <span class="star" data-rating="5">&#9733;</span>
+        </div>
+
+        <textarea id="experience" placeholder="Write your experience on eating the food..."></textarea>
+
+        <button id="submitBtn" onclick="submitReview()">Submit Review</button>
+    </div>
+
+    <script>
+        let selectedStars = 0;
+
+        // Event listener for star rating
+        document.querySelectorAll('.star').forEach(star => {
+            star.addEventListener('click', () => {
+                selectedStars = parseInt(star.getAttribute('data-rating'));
+                updateStars();
+            });
+        });
+
+        // Update stars based on user selection
+        function updateStars() {
+            document.querySelectorAll('.star').forEach((star, index) => {
+                if (index < selectedStars) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        // Function to submit the review
+        function submitReview() {
+            const experienceText = document.getElementById('experience').value;
+
+            // You can send the data (selectedStars and experienceText) to your server for processing/storage
+
+            // For demonstration purposes, let's log the data to the console
+            console.log('Stars:', selectedStars);
+            console.log('Experience:', experienceText);
+
+            // You can also add further logic here, like displaying a confirmation message to the user
+        }
+    </script>
+</body>
+</html>

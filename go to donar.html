@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://media.istockphoto.com/id/1329248752/photo/hispanic-courier-man-shipping-cardboard-box-to-customer-client-for-fast-delivery-deliveryman.jpg?s=612x612&w=0&k=20&c=He9wL5LdLyH42c2aR9L-VECLRJ7MU-r-61CD0NLDuIU='); /* Replace 'your-background-image-url.jpg' with the actual URL or path of your background image */
+            background-size: cover;
+            background-position: center;
+            background-color: blueviolet; /* Fallback color if the image fails to load */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            backdrop-filter: blur(2px);
+        }
+
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Use rgba to add some transparency to the form background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(9, 1, 54, 0.1);
+        }
+
+        .container {
+            background-color: transparent;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #d3b2d8;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4d42a8;
+        }
+
+        .error {
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form id="donorForm" onsubmit="return submitDonation()">
+            <h2>Donor Information</h2>
+
+            <label for="veg/non veg">Veg/Non-Veg:</label>
+            <input type="text" id="veg/non-veg" placeholder=" " required>
+
+            <label for="fooditemsavailable">Food items available:</label>
+            <input type="text" id="fooditemsavailable" placeholder=" " required>
+
+            <label for="foodQuantity">Quantity of Food:</label>
+            <input type="text" id="foodQuantity" placeholder=" " required>
+
+            <button type="submit">Submit Donation</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            // You can add additional validation if needed
+            return true;
+        }
+
+        function submitDonation() {
+            if (validateForm()) {
+                // Add logic to submit the form data to your server if needed
+                
+                // Navigate to the next page
+                window.location.href = "file:///C:/Users/LEELA%20SRIDEVI/OneDrive/Desktop/jupyter/.ipynb_checkpoints/web/Untitled-2.html";
+                
+                // Returning false to prevent the form from actually submitting
+                return false;
+            } else {
+                // Returning false to prevent the form from actually submitting
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receiver Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://media.istockphoto.com/id/1329248752/photo/hispanic-courier-man-shipping-cardboard-box-to-customer-client-for-fast-delivery-deliveryman.jpg?s=612x612&w=0&k=20&c=He9wL5LdLyH42c2aR9L-VECLRJ7MU-r-61CD0NLDuIU='); /* Replace 'your-background-image-url.jpg' with the actual URL or path of your background image */
+            background-size: cover;
+            background-position: center;
+            background-color: blueviolet; /* Fallback color if the image fails to load */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            backdrop-filter: blur(2px);
+        }
+
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Use rgba to add some transparency to the form background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(9, 1, 54, 0.1);
+        }
+
+        .container {
+            background-color: transparent;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #d3b2d8;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4d42a8;
+        }
+
+        .error {
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <form id="receiverForm" onsubmit="return submitReview()">
+            <h2>Receiver Information</h2>
+    
+            <label for="organizationName">Organization Name:</label>
+            <input type="text" id="organizationName" placeholder="Enter organization name" required>
+    
+            <label for="organizationAddress">Organization Address:</label>
+            <input type="text" id="organizationAddress" placeholder="Enter organization address" required>
+    
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" pattern="[0-9]{10}" placeholder="enter valid phone number" required>
+            <div class="error" id="phoneNumberError"></div>
+            
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
+
+    <script>
+        function validateForm() {
+            var phoneNumber = document.getElementById('phoneNumber').value;
+
+            // Check if the phone number has 10 digits
+            if (phoneNumber.length !== 10 || isNaN(phoneNumber)) {
+                document.getElementById('phoneNumberError').innerHTML = 'Enter a valid 10-digit mobile number.';
+                return false;
+            } else {
+                document.getElementById('phoneNumberError').innerHTML = '';
+                return true;
+            }
+        }
+
+        function submitReview() {
+            if (validateForm()) {
+                // Add logic to submit the form data to your server if needed
+                
+                // Navigate to the next page
+                window.location.href = "file:///C:/Users/LEELA%20SRIDEVI/OneDrive/Desktop/jupyter/.ipynb_checkpoints/web/Untitled-2.html";
+                
+                // Returning false to prevent the form from actually submitting
+                return false;
+            } else {
+                // Returning false to prevent the form from actually submitting
+                return false;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
